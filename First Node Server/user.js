@@ -2,6 +2,7 @@ const http =require('http');
 const fs = require('fs');
 function requestListener(req,res){
     //console.log(req);
+    console.log('hello');
     console.log(req.url, req.method);
 
     if(req.url === '/'){ //come to home page
@@ -46,7 +47,7 @@ function requestListener(req,res){
         res.setHeader('Location','/');
         res.end();
     }
-    
+    // this will again redirect to this page.
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>content</title></head>');
